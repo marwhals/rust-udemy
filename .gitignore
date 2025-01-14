@@ -1,0 +1,13 @@
+# Compiled binary files
+/target/
+
+# Rust/Cargo specific files
+**/*.rs.bk
+Cargo.lock
+
+# Build scripts and temporary files
+*.log
+*.tmp
+*.rs.bk
+/.idea/
+/*.rs.bk

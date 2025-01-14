@@ -68,3 +68,5 @@ fn main() {
     //print_holder(account.holder);///moving the holder property out
     //print_account(account);///error because one of the properties have already moved out of the object
 }
+
+//TODO continue from 31 the borrow system

@@ -8,6 +8,11 @@ Notes on ownership in Rust
 ----- Reassigning a value to another variable *moves* the value. References to the old variable can't be used for access anymore
 *** Rust avoids unexpected updates
 
+Notes on the borrow system in Rust
+- Refs allow us to look at a value without moving it
+- Use case -> Make value -> Use value in multiple places, owner changing would be cumbersome. Solution: Use a reference to the value
+- You can create many read-only references to a value. These refs can all exist at the same time
+- You can't move a value while a ref to the value exists
 
  */
 
@@ -44,29 +49,23 @@ impl Bank {
 // } ---- can't print twice
 
 
-fn print_account(account: Account) -> Account {
+fn print_account(account: &Account) {//Context of '&'. The argument needs to be a reference to a value
     println!("{:#?}", account);
-    account //implicit return
-}
-
-fn print_holder(holder: String) {
-    println!("{:#?}", holder)
 }
 
 fn main() {
     let bank = Bank::new();
-    // let account = Account::new(1, String::from("me"));
-    let mut account = Account::new(1, String::from("me"));
+    let account = Account::new(1, String::from("me"));
+    // let mut account = Account::new(1, String::from("me"));
     // let other_bank = bank; <---- moving the bank variable occurs here
     // let list_of_accounts = vec![account]; <--- passing ownership to of the account to the list_of_accounts variable
     println!("{:#?}", bank);
+    let account_ref = &account; //Reference to a value
     // println!("{:#?}", bank);
-    account = print_account(account);
-    account = print_account(account);
+    print_account(account_ref);
+    print_account(account_ref);
     // print_account(account); <--- error - use of moved value account
 
     //print_holder(account.holder);///moving the holder property out
     //print_account(account);///error because one of the properties have already moved out of the object
 }
-
-//TODO continue from 31 the borrow system

@@ -7,6 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/basics/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lifetimes/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/enums/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/error-_handling/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/error_handling/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/generics/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/iterators/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/bank/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/basics/target" />
